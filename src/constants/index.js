@@ -152,7 +152,7 @@ const experiences = [
   points: [
     "Capacitación en procesos contables fundamentales: Estados Financieros, Ecuación Contable y Teoría de la Partida Doble.",
     "Gestión administrativa avanzada: Elaboración de retenciones a clientes/proveedores, facturación, notas de crédito y declaraciones de I.V.A e I.S.L.R.",
-    "Dominio de legislación laboral y recursos humanos: Nómina, cálculos de impuestos para-fiscales (S.S.O, INCES, FAOV), prestaciones sociales y liquidaciones.",
+    "Dominio de legislación laboral y recursos humanos: Nómina, cálculos de impuestos Parafiscales (S.S.O, INCES, FAOV).",
     "Manejo técnico de documentos mercantiles, cuadres de caja y reportes de ventas.",
     ],
   },
