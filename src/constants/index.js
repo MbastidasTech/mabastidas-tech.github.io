@@ -65,8 +65,8 @@ const services = [
 
 const technologies = [
   {
-    name: "excel",
-    icon: excel,
+    name: "stellarpos",
+    icon: stellarpos,
   },
   {
     name: "word",
