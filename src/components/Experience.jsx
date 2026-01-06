@@ -27,7 +27,7 @@ const ExperienceCard = ({ experience }) => {
           <img
             src={experience.icon}
             alt={experience.company_name}
-            className='w-[60%] h-[60%] object-contain'
+            className='w-[95%] h-[95%] object-contain'
           />
         </div>
       }
@@ -59,14 +59,14 @@ const ExperienceCard = ({ experience }) => {
 const Experience = () => {
   return (
     <>
-      <motion.div variants={textVariant()}>
-        <p className={`${styles.sectionSubText} text-center`}>
-          What I have done so far
+      <div className="w-full flex flex-col items-center mb-10">
+        <p className="sm:text-[18px] text-[14px] text-secondary uppercase tracking-wider text-center">
+          Lo que he hecho hasta ahora
         </p>
-        <h2 className={`${styles.sectionHeadText} text-center`}>
-          Work Experience.
+        <h2 className="text-white font-black md:text-[60px] sm:text-[50px] xs:text-[40px] text-[30px] text-center">
+          Experiencia Laboral.
         </h2>
-      </motion.div>
+      </div>
 
       <div className='mt-20 flex flex-col'>
         <VerticalTimeline>

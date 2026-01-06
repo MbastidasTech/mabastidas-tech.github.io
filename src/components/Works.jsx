@@ -3,9 +3,9 @@ import Tilt from "react-tilt";
 import { motion } from "framer-motion";
 
 import { styles } from "../styles";
-import { github } from "../assets";
 import { SectionWrapper } from "../hoc";
 import { projects } from "../constants";
+import { drive } from "../assets"; // Imagen de Drive ya importada
 import { fadeIn, textVariant } from "../utils/motion";
 
 const ProjectCard = ({
@@ -38,9 +38,10 @@ const ProjectCard = ({
               onClick={() => window.open(source_code_link, "_blank")}
               className='black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer'
             >
+              {/* Cambio realizado: de github a drive */}
               <img
-                src={github}
-                alt='source code'
+                src={drive} 
+                alt='google drive'
                 className='w-1/2 h-1/2 object-contain'
               />
             </div>
@@ -71,8 +72,8 @@ const Works = () => {
   return (
     <>
       <motion.div variants={textVariant()}>
-        <p className={`${styles.sectionSubText} `}>My work</p>
-        <h2 className={`${styles.sectionHeadText}`}>Projects.</h2>
+        <p className={`${styles.sectionSubText} `}>MIS TRABAJOS RECIENTES</p>
+        <h2 className={`${styles.sectionHeadText}`}>Proyectos.</h2>
       </motion.div>
 
       <div className='w-full flex'>
@@ -80,11 +81,7 @@ const Works = () => {
           variants={fadeIn("", "", 0.1, 1)}
           className='mt-3 text-secondary text-[17px] max-w-3xl leading-[30px]'
         >
-          Following projects showcases my skills and experience through
-          real-world examples of my work. Each project is briefly described with
-          links to code repositories and live demos in it. It reflects my
-          ability to solve complex problems, work with different technologies,
-          and manage projects effectively.
+          Los siguientes casos de estudio representan mi experiencia técnica en la gestión de riesgos y optimización de entornos seguros. Cada proyecto incluye un resumen de los hallazgos y metodologías aplicadas.
         </motion.p>
       </div>
 

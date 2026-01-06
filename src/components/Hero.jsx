@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-
+import miImagen from "../assets/finanzas.png";
 import { styles } from "../styles";
 import { ComputersCanvas } from "./canvas";
 
@@ -16,16 +16,24 @@ const Hero = () => {
 
         <div>
           <h1 className={`${styles.heroHeadText} text-white`}>
-            Hi, I'm <span className='text-[#915EFF]'>Adrian</span>
+            Hola, soy <span className='text-[#915EFF]'>Maryelis</span>
           </h1>
           <p className={`${styles.heroSubText} mt-2 text-white-100`}>
-            I develop 3D visuals, user <br className='sm:block hidden' />
-            interfaces and web applications
+            Optimizo procesos financieros y <br className='sm:block hidden' />
+            garantizo entornos laborales seguros.
           </p>
         </div>
       </div>
 
-      <ComputersCanvas />
+      {/* Contenedor de la imagen posicionado a la derecha */}
+      <div className="absolute inset-y-0 right-0 md:right-[5%] lg:right-[2%] top-[150px] flex items-center justify-center pointer-events-none">
+        <img 
+          src={miImagen} 
+          alt="Maryelis" 
+          /* Cambia los números de abajo para reducir el tamaño */
+          className="w-[250px] md:w-[400px] lg:w-[400px] h-auto object-contain"
+        />
+      </div>
 
       <div className='absolute xs:bottom-10 bottom-32 w-full flex justify-center items-center'>
         <a href='#about'>
