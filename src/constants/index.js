@@ -219,7 +219,7 @@ const testimonials = [
   },
   {
     testimonial:
-      "Su enfoque integral no solo optimizó nuestras finanzas, sino que transformó nuestra cultura de seguridad. Una profesional con una visión analítica impecable.",
+      "Maryelis tiene una capacidad excepcional para identificar oportunidades de mejora. Su gestión administrativa garantiza un control impecable de los activos, mientras que su análisis financiero aporta la claridad necesaria para maximizar la rentabilidad del negocio.",
     name: "Jesús Cuicas",
     designation: "Ing. Informática",
     company: "CONTIGO CORP",
@@ -227,7 +227,7 @@ const testimonials = [
   },
   {
     testimonial:
-      "Maryelis optimizó nuestros flujos de caja de manera increíble. Altamente recomendada!",
+      "Su habilidad como asesora de negocios fue determinante para concretar nuestra expansión. No solo domina los números, sino que tiene la visión estratégica necesaria para cerrar acuerdos de negocio exitosos.",
     name: "Marilin Colmenarez",
     designation: "Analista Cobranza",
     company: "LION TECH",

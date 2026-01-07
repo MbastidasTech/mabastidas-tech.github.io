@@ -1,85 +1,24 @@
-import React, { Suspense, useState, useEffect } from "react";
-import { Canvas } from "@react-three/fiber";
-import {
-  Decal,
-  Float,
-  OrbitControls,
-  Preload,
-  useTexture,
-} from "@react-three/drei";
-
-import CanvasLoader from "../Loader";
-
-const Ball = ({ imgUrl }) => {
-  const [decal] = useTexture([imgUrl]);
-
-  return (
-    <Float speed={1.75} rotationIntensity={1} floatIntensity={2}>
-      <ambientLight intensity={0.5} />
-      <directionalLight position={[0, 0, 0.05]} />
-      <mesh castShadow receiveShadow scale={2.75}>
-        <icosahedronGeometry args={[1, 0]} />
-        <meshStandardMaterial
-          color='#fff8eb'
-          polygonOffset
-          polygonOffsetFactor={-5}
-          flatShading
-        />
-        <Decal
-          position={[0, 0, 1]}
-          rotation={[2 * Math.PI, 0, 6.25]}
-          scale={1}
-          map={decal}
-          flatShading
-        />
-      </mesh>
-    </Float>
-  );
-};
+import React from "react";
 
 const BallCanvas = ({ icon }) => {
-  const [isInView, setIsInView] = useState(false);
-
-  // Solo renderizamos si la bola está cerca de entrar en pantalla
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsInView(true);
-          observer.disconnect(); // Una vez cargada, la dejamos fija
-        }
-      },
-      { threshold: 0.1 }
-    );
-
-    // Buscamos el elemento actual (el canvas)
-    const el = document.getElementById(icon);
-    if (el) observer.observe(el);
-
-    return () => observer.disconnect();
-  }, [icon]);
-
   return (
-    <div id={icon} className="w-28 h-28">
-      {isInView ? (
-        <Canvas
-          frameloop='demand'
-          dpr={[1, 1.5]} // Bajamos un poco más el tope para móviles antiguos
-          gl={{ 
-            preserveDrawingBuffer: true,
-            powerPreference: "high-performance", // Forzamos uso de GPU eficiente
-            alpha: true 
-          }}
-        >
-          <Suspense fallback={<CanvasLoader />}>
-            <OrbitControls enableZoom={false} />
-            <Ball imgUrl={icon} />
-          </Suspense>
-          <Preload all />
-        </Canvas>
-      ) : (
-        <div className="w-full h-full bg-transparent" /> 
-      )}
+    <div className='flex items-center justify-center w-32 h-32'>
+      {/* Aumentamos el contenedor de w-24 a w-28 */}
+      <div className='relative w-28 h-28 rounded-full bg-[#fff8eb] shadow-card flex items-center justify-center group transition-transform duration-300 hover:scale-110'>
+        
+        {/* Efecto de profundidad simétrica */}
+        <div className='absolute inset-0 rounded-full bg-gradient-to-br from-white/60 to-black/30 pointer-events-none' />
+        
+        {/* ICONO MÁS GRANDE: Subimos de w-14 a w-20 */}
+        <img
+          src={icon}
+          alt='tech-icon'
+          className='w-20 h-20 object-contain z-10 drop-shadow-2xl transition-transform group-hover:scale-105'
+        />
+
+        {/* Brillo de la "esfera" reajustado */}
+        <div className='absolute top-3 left-6 w-8 h-4 bg-white/50 rounded-full blur-[3px]' />
+      </div>
     </div>
   );
 };
